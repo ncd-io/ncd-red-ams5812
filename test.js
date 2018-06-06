@@ -14,11 +14,11 @@ var comm = new comms.NcdSerialI2C(serial, 0);
 //var comm = new comms.NcdI2C(1);
 
 var config = {
-	range: 5,
-	sType: "d-b",
+	range: 15,
+	sType: "d",
 	tempScale: "f"
 };
-var dac = new AMS5915(0x28, comm, config);
+var dac = new AMS5915(0x78, comm, config);
 
 function testGet(){
 	dac.get().then((r) => {

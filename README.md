@@ -1,13 +1,13 @@
-This library provides a class for the AMS5915 series, it relies on the ncd-red-comm library for communication, and includes a node-red node for AMS5915. AMS5915 pressure sensors are a series of high-precision OEM sensors with a digital I²C-interface. [Ncd.io](https://ncd.io) manufactures several mini-modules that utilize these sensors for different applications. You can see a [list here](https://store.ncd.io/?post_type=product&s=ams5915&site_select=https%3A%2F%2Fstore.ncd.io%3Fpost_type%3Dproduct).
+This library provides a class for the AMS5812 series, it relies on the ncd-red-comm library for communication, and includes a node-red node for AMS5812. AMS5812 pressure sensors are a series of high-precision OEM sensors with a digital I²C-interface. [Ncd.io](https://ncd.io) manufactures several mini-modules that utilize these sensors for different applications. You can see a [list here](https://store.ncd.io/?post_type=product&s=ams5812&site_select=https%3A%2F%2Fstore.ncd.io%3Fpost_type%3Dproduct).
 
-[![AMS5915](./ams5915.png)](https://store.ncd.io/?post_type=product&s=ams5915&site_select=https%3A%2F%2Fstore.ncd.io%3Fpost_type%3Dproduct)
+[![AMS5812](./ams5812.png)](https://store.ncd.io/?post_type=product&s=ams5812&site_select=https%3A%2F%2Fstore.ncd.io%3Fpost_type%3Dproduct)
 
 ### Installation
 
 This library can be installed with npm with the following command:
 
 ```
-npm install ncd-red-ams5915
+npm install ncd-red-ams5812
 ```
 
 For use in node-red, use the same command, but inside of your node-red directory (usually `~./node-red`).
