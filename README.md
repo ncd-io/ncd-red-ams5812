@@ -1,0 +1,23 @@
+This library provides a class for the AMS5915 series, it relies on the ncd-red-comm library for communication, and includes a node-red node for AMS5915. AMS5915 pressure sensors are a series of high-precision OEM sensors with a digital I²C-interface. [Ncd.io](https://ncd.io) manufactures several mini-modules that utilize these sensors for different applications. You can see a [list here](https://store.ncd.io/?post_type=product&s=ams5915&site_select=https%3A%2F%2Fstore.ncd.io%3Fpost_type%3Dproduct).
+
+[![AMS5915](./ams5915.png)](https://store.ncd.io/?post_type=product&s=ams5915&site_select=https%3A%2F%2Fstore.ncd.io%3Fpost_type%3Dproduct)
+
+### Installation
+
+This library can be installed with npm with the following command:
+
+```
+npm install ncd-red-ams5915
+```
+
+For use in node-red, use the same command, but inside of your node-red directory (usually `~./node-red`).
+
+### Usage
+
+The `test.js` file included in this library contains basic examples for use.  All of the available configurations are available in the node-red node through the UI.
+
+### Raspberry Pi Notes
+
+If you intend to use this on the Raspberry Pi, you must ensure that:
+1. I2C is enabled (there are plenty of tutorials on this that differ based on the Pi version.)
+2. Node, NPM, and Node-red should be updated to the latest stable versions. If you skip this step the ncd-red-comm dependency may not load properly.
