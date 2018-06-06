@@ -1,10 +1,10 @@
 {
     "name": "ncd-red-ams5812",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"The test.js file may be used for testing, but configuration of the I2C connection is required.\" && exit 1"
     },
     "repository": {
         "type": "git",
