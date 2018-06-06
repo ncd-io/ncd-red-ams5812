@@ -1,6 +1,6 @@
 "use strict";
 
-const AMS5915 = require("./index.js");
+const AMS5812 = require("./index.js");
 const Queue = require("promise-queue");
 
 module.exports = function(RED){
@@ -10,14 +10,14 @@ module.exports = function(RED){
 	function NcdI2cDeviceNode(config){
 		RED.nodes.createNode(this, config);
 		this.interval = parseInt(config.interval);
-		this.addr = 0x28;
+		this.addr = 0x78;
 		if(typeof sensor_pool[this.id] != 'undefined'){
 			//Redeployment
 			clearTimeout(sensor_pool[this.id].timeout);
 			delete(sensor_pool[this.id]);
 		}
 
-		this.sensor = new AMS5915(this.addr, RED.nodes.getNode(config.connection).i2c, config);
+		this.sensor = new AMS5812(this.addr, RED.nodes.getNode(config.connection).i2c, config);
 
 		var node = this;
 
@@ -38,7 +38,6 @@ module.exports = function(RED){
 		}
 
 		function send_payload(_status){
-			_status.pressure *= config.pScale;
 			var msg = [
 				{topic: 'pressure', payload: _status.pressure},
 				{topic: 'temperature', payload: _status.temperature},
@@ -63,6 +62,7 @@ module.exports = function(RED){
 				});
 			}else{
 				sensor_pool[node.id].timeout = setTimeout(() => {
+					node.sensor.init();
 					if(typeof sensor_pool[node.id] != 'undefined') get_status(true);
 				}, 3000);
 			}
@@ -84,5 +84,5 @@ module.exports = function(RED){
 			done();
 		});
 	}
-	RED.nodes.registerType("ncd-ams5915", NcdI2cDeviceNode)
+	RED.nodes.registerType("ncd-ams5812", NcdI2cDeviceNode)
 }
